@@ -1,0 +1,22 @@
+CREATE TABLE clothing (item TEXT, quantity INTEGER, price INTEGER, color TEXT, size TEXT);
+
+INSERT into clothing values ( "pants", 20, 20, "black", "small"); 
+INSERT into clothing values ( "pants", 20, 20, "black", "medium");
+INSERT into clothing values ( "pants", 10, 20, "black", "large"); 
+
+INSERT into clothing values ("shirts", 10, 15, "pink", "small");
+INSERT into clothing values ("shirts", 30, 15, "blue", "medium");
+INSERT into clothing values ("shirts", 5, 15, "yellow", "large"); 
+INSERT into clothing values ("shirts", 5, 15, "pink", "medium"); 
+INSERT into clothing values ("shirts", 20, 15, "blue", "large"); 
+INSERT into clothing values ("pants", 25, 30, "black", "large");
+INSERT into clothing values ("pants", 5, 40, "blue", "small"); 
+INSERT into clothing values ("pants", 19, 25, "blue", "medium");
+INSERT into clothing values ("pants", 22, 25, "blue", "large"); 
+INSERT into clothing values ("pants", 12, 25, "blue", "extra large"); 
+INSERT into clothing values ("shirts", 3, 15, "yellow", "small"); 
+INSERT into clothing values ("shirts", 29, 25, "pink", "small"); 
+
+SELECT* FROM clothing ORDER BY item, price, size;
+SELECT avg(price) FROM clothing; 
+SELECT SUM(quantity) FROM clothing;
