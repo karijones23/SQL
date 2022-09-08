@@ -1,0 +1,38 @@
+CREATE TABLE singers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER);
+    
+INSERT INTO singers VALUES (1, "Harry Styles", 28);
+INSERT INTO singers VALUES (2, "Justin Timerberlake", 41);
+INSERT INTO singers VALUES (3, "Brett Eldredge", 36); 
+INSERT INTO singers VALUES (4, "Blake Shelton", 46);
+INSERT INTO singers VALUES (5, "Dolly Parton", 76); 
+INSERT INTO singers VALUES (6, "Beyonce Knowles", 41);
+INSERT INTO singers VALUES (7, "Kenny Chesney", 54); 
+INSERT INTO singers VALUES (8, "Morgan Wallen", 29);
+INSERT INTO singers VALUES (9, "Taylor Swift", 32);
+INSERT INTO singers VALUES (10, "John Mayer", 44);
+
+CREATE TABLE birthplace (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    city TEXT,
+    state TEXT);
+    
+INSERT INTO birthplace (person_id, city, state) VALUES (1, "Redditch", "UK");
+INSERT INTO birthplace (person_id, city, state) VALUES (2, "Memphis", "TN");
+INSERT INTO birthplace (person_id, city, state) VALUES (3, "Paris", "IL"); 
+INSERT INTO birthplace (person_id, city, state) VALUES (4, "Ada", "OK");
+INSERT INTO birthplace (person_id, city, state) VALUES (5, "Pittman Center", "TN");
+INSERT INTO birthplace (person_id, city, state) VALUES (6, "Houston", "TX");
+INSERT INTO birthplace (person_id, city, state) VALUES (7, "Knoxville", "TN");
+INSERT INTO birthplace (person_id, city, state) VALUES (8, "Sneedville", "TN");
+INSERT INTO birthplace (person_id, city, state) VALUES (9, "West Reading", "PA");
+INSERT INTO birthplace (person_id, city, state) VALUES (10, "Bridgeport", "CT"); 
+
+SELECT singers.fullname, birthplace.city, birthplace.state
+FROM  singers
+LEFT OUTER JOIN birthplace
+ON singers.id= birthplace.person_id;
+
